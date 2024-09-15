@@ -22,15 +22,44 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+1. Technology Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+● Frontend:
+○ Next.js: Full-stack framework used for both server-side rendering and static site generation.
+○ Tailwind CSS: Utility-first CSS framework used for designing the UI.
+○ Framer Motion: Used for animations and enhancing user interactions with smooth transitions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+● Backend:
+○ Axios: HTTP client used for making API requests to external services.
+○ Hyperleap APIs: Leveraged for providing a seamless wrapper to GPT-4o prompts for creating custom
+itinerary content, FAQs, and more.
+○ SerpAPI: Used for scraping Google search results to fetch popular destinations and other relevant data.
+○ MongoDB: NoSQL database used for storing itineraries and other user-generated content. The choice of
+MongoDB allows for flexible schema design and easy scalability.
 
-## Deploy on Vercel
+● Language: TypeScript for type safety across the application, reducing errors, and improving code quality.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Key Features
+   
+● Interactive Form: A crisp and minimalistic form for users to input their travel preferences.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+● Dynamic Itinerary Generation: Custom itineraries generated in real-time based on current data, including
+activities, eateries, FAQs, and popular destinations.
+
+● Shareable Links: Users receive a unique link to their itinerary, which can be shared with others.
+
+● Chatbot Integration: An AI-powered chatbot is available to assist users with their travel planning questions.
+
+● Loading Screen: A thoughtfully designed loading screen keeps users engaged with rotating images and texts
+while the itinerary is being generated.
+
+3. Challenges and Solutions
+   
+● User Interface Design: It was initially challenging to organize the itinerary details, especially when displaying
+day-wise activities in a single tab. Feedback from peers led to changes in the color scheme and improved the
+overall UI.
+
+● Error Handling: For GPT-4o prompts, a retry mechanism was implemented to handle occasional errors in
+generating valid JSON responses. The function attempts to generate the correct result up to three times, though the
+error rate remains at about 1/100 requests. Future improvements could involve refining the prompts or using
+parallel requests to increase success rates.
